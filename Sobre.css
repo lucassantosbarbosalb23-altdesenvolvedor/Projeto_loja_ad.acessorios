@@ -1,0 +1,588 @@
+/* =========================================
+   PÁGINA SOBRE NÓS
+========================================= */
+
+.sobre-hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f1fb,
+            #eee1f5
+        );
+}
+
+.sobre-hero-conteudo {
+    max-width: 800px;
+}
+
+.sobre-subtitulo,
+.titulo-pequeno {
+    color: #6a0dad;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sobre-hero h1 {
+    margin: 18px 0;
+    font-size: 52px;
+    color: #2b2030;
+}
+
+.sobre-hero h1 span,
+.sobre-texto h2 span,
+.essencia-titulo h2 span,
+.diferenciais h2 span {
+    color: #6a0dad;
+}
+
+.sobre-hero p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #625766;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   QUEM SOMOS
+========================================= */
+
+.sobre-secao {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 90px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.sobre-texto h2 {
+    margin: 15px 0 25px;
+
+    font-size: 38px;
+    line-height: 1.2;
+
+    color: #2b2030;
+}
+
+.sobre-texto p {
+    color: #665d69;
+    font-size: 16px;
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.sobre-destaque {
+    min-height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6a0dad,
+            #9145c7
+        );
+
+    box-shadow:
+        0 15px 35px rgba(106, 13, 173, 0.20);
+}
+
+.sobre-card {
+    width: 75%;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    backdrop-filter: blur(5px);
+}
+
+.sobre-card span {
+    font-size: 45px;
+}
+
+.sobre-card h3 {
+    font-size: 28px;
+    margin: 20px 0 15px;
+}
+
+.sobre-card p {
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================
+   ESSÊNCIA
+========================================= */
+
+.essencia {
+    padding: 90px 20px;
+
+    background: #faf8fb;
+
+    text-align: center;
+}
+
+.essencia-titulo h2 {
+    margin: 15px auto 50px;
+
+    font-size: 38px;
+
+    color: #2b2030;
+}
+
+.essencia-cards {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.essencia-card {
+    padding: 35px 25px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.essencia-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(106, 13, 173, 0.15);
+}
+
+.essencia-icone {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f1e6f7;
+
+    font-size: 28px;
+}
+
+.essencia-card h3 {
+    margin-bottom: 12px;
+
+    color: #302434;
+
+    font-size: 22px;
+}
+
+.essencia-card p {
+    color: #706775;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   DIFERENCIAIS
+========================================= */
+
+.diferenciais {
+    padding: 100px 20px;
+
+    background: white;
+}
+
+.diferenciais-conteudo {
+    width: 90%;
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.diferenciais h2 {
+    margin: 15px 0;
+
+    font-size: 40px;
+
+    color: #2b2030;
+}
+
+.diferenciais p {
+    max-width: 650px;
+
+    color: #665d69;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+.lista-diferenciais {
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.lista-diferenciais div {
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: #faf7fc;
+
+    color: #423747;
+
+    font-weight: 500;
+}
+
+.lista-diferenciais span {
+    color: #6a0dad;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-right: 10px;
+}
+
+
+/* =========================================
+   CHAMADA FINAL
+========================================= */
+
+.sobre-final {
+    padding: 90px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6a0dad,
+            #9145c7
+        );
+
+    color: white;
+}
+
+.sobre-final h2 {
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 40px;
+}
+
+.sobre-final p {
+    margin: 20px auto 30px;
+
+    font-size: 17px;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.sobre-final button {
+    padding: 15px 32px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #6a0dad;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.sobre-final button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .sobre-hero {
+        min-height: 350px;
+    }
+
+    .sobre-hero h1 {
+        font-size: 38px;
+    }
+
+    .sobre-hero p {
+        font-size: 16px;
+    }
+
+    .sobre-secao {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        margin: 60px auto;
+    }
+
+    .sobre-texto h2 {
+        font-size: 30px;
+    }
+
+    .essencia {
+        padding: 65px 20px;
+    }
+
+    .essencia-titulo h2 {
+        font-size: 30px;
+    }
+
+    .essencia-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .diferenciais {
+        padding: 70px 20px;
+    }
+
+    .diferenciais h2 {
+        font-size: 32px;
+    }
+
+    .lista-diferenciais {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-final h2 {
+        font-size: 30px;
+    }
+}
+/* =========================================
+   LOJA FÍSICA
+========================================= */
+
+.loja-fisica {
+    padding: 90px 20px;
+
+    background: #faf8fb;
+}
+
+.loja-conteudo {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.loja-informacoes {
+    max-width: 850px;
+}
+
+.loja-informacoes h2 {
+    margin: 15px 0 20px;
+
+    font-size: 40px;
+
+    color: #2b2030;
+}
+
+.loja-informacoes h2 span {
+    color: #6a0dad;
+}
+
+.loja-informacoes > p {
+    max-width: 700px;
+
+    color: #665d69;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+.loja-dados {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+}
+
+.loja-item {
+    display: flex;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.loja-icone {
+    width: 50px;
+    height: 50px;
+
+    min-width: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f1e6f7;
+
+    font-size: 23px;
+}
+
+.loja-item h3 {
+    margin: 0 0 8px;
+
+    color: #302434;
+
+    font-size: 19px;
+}
+
+.loja-item p {
+    margin: 0;
+
+    color: #706775;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+.botao-localizacao {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #6a0dad,
+        #9145c7
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 6px 18px rgba(106, 13, 173, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.botao-localizacao:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(106, 13, 173, 0.35);
+}
+
+
+/* =========================================
+   RESPONSIVIDADE - LOJA
+========================================= */
+
+@media (max-width: 768px) {
+
+    .loja-fisica {
+        padding: 65px 20px;
+    }
+
+    .loja-informacoes h2 {
+        font-size: 32px;
+    }
+
+    .loja-dados {
+        grid-template-columns: 1fr;
+    }
+
+    .botao-localizacao {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+}

@@ -1,0 +1,876 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f5fc;
+    color: #333;
+   
+}
+
+header {
+    background: linear-gradient(135deg, #bb9af7, #ccb7f4, #aa82f5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5px 50px;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.banner {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #eadcff;
+}
+
+.banner h2 {
+    font-size: 40px;
+    color: #6a0dad;
+}
+
+.banner p {
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+button {
+    background-color: #6a0dad;
+    color: white;
+
+    border: none;
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4b087c;
+}
+
+.produtos {
+    padding: 60px 50px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+}
+
+.produtos h2 {
+    color: #6a0dad;
+    margin-bottom: 30px;
+}
+
+.lista-produtos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.produto {
+    background-color: white;
+
+    width: 250px;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.imagem-produto {
+   height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.imagem-produto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.produto h3 {
+    margin-bottom: 10px;
+}
+
+.produto p {
+    margin-bottom: 15px;
+}
+
+footer {
+    background: linear-gradient(135deg, #bb9af7, #ccb7f4, #aa82f5);
+    text-align: center;
+
+    padding: 20px;
+}
+
+/* Fundo escuro atrás do carrinho */
+
+.carrinho-modal {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+
+/* Caixa do carrinho */
+
+.carrinho-conteudo {
+
+    background-color: white;
+
+    width: 90%;
+    max-width: 600px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    position: relative;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Botão fechar */
+
+.fechar-carrinho {
+
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* Título */
+
+.carrinho-conteudo h2 {
+
+    color: #6a0dad;
+
+    margin-bottom: 25px;
+}
+
+
+/* Produto dentro do carrinho */
+
+.item-carrinho {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.item-carrinho h3 {
+
+    margin: 0;
+
+    color: #333;
+}
+
+
+.item-carrinho p {
+
+    margin: 5px 0;
+
+    color: #666;
+}
+
+
+/* Controle de quantidade */
+
+.controle-quantidade {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.controle-quantidade button {
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    background-color: #6a0dad;
+
+    color: white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+.controle-quantidade button:hover {
+
+    background-color: #52098a;
+}
+
+
+.controle-quantidade span {
+
+    font-weight: bold;
+
+    min-width: 20px;
+
+    text-align: center;
+}
+
+
+/* Subtotal */
+
+.subtotal {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.subtotal strong {
+
+    color: #6a0dad;
+}
+
+
+/* Botão remover */
+
+.subtotal button {
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* Total */
+
+.total-carrinho {
+
+    text-align: right;
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 2px solid #6a0dad;
+}
+
+
+.total-carrinho h3 {
+
+    color: #333;
+}
+
+
+/* Botão WhatsApp */
+
+.finalizar {
+    width: 100%;
+    padding: 14px;
+
+    margin-top: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #6a0dad;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.finalizar:hover {
+    background-color: #52098a;
+    transform: translateY(-2px);
+}
+
+/* Carrinho vazio */
+
+.carrinho-vazio {
+
+    text-align: center;
+
+    color: #777;
+
+    padding: 30px;
+}
+
+/* =========================
+   DADOS DO PEDIDO
+========================= */
+
+.dados-pedido {
+
+    margin-top: 25px;
+    padding-top: 20px;
+
+    border-top: 1px solid #ddd;
+}
+
+
+.dados-pedido h3 {
+
+    color: #6a0dad;
+
+    margin-bottom: 15px;
+}
+
+
+.dados-pedido input,
+.dados-pedido select,
+.dados-pedido textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-family: Arial, sans-serif;
+
+    outline: none;
+}
+
+
+.dados-pedido input:focus,
+.dados-pedido select:focus,
+.dados-pedido textarea:focus {
+
+    border-color: #6a0dad;
+}
+
+
+.dados-pedido textarea {
+
+    min-height: 80px;
+
+    resize: vertical;
+}
+
+.imagem-carrinho {
+
+    width: 80px;
+    height: 80px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: 1px solid #ddd;
+}
+
+.item-carrinho {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.informacoes-produto {
+
+    flex: 1;
+}
+/* =====================================
+   CARRINHO NO CELULAR
+===================================== */
+
+@media (max-width: 600px) {
+
+    .carrinho-conteudo {
+        width: 92%;
+        max-height: 90vh;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .carrinho-conteudo h2 {
+        font-size: 22px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Produto no carrinho */
+    .item-carrinho {
+        display: grid;
+        grid-template-columns: 65px 1fr;
+        gap: 10px;
+
+        padding: 15px 0;
+    }
+
+    .imagem-carrinho {
+        width: 65px;
+        height: 65px;
+
+        grid-row: span 2;
+    }
+
+    /* Informações */
+    .informacoes-produto {
+        min-width: 0;
+    }
+
+    .informacoes-produto h3 {
+        font-size: 15px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .informacoes-produto p {
+        font-size: 14px;
+    }
+
+    /* Quantidade */
+    .controle-quantidade {
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .controle-quantidade button {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Subtotal */
+    .subtotal {
+        grid-column: 2;
+
+        justify-content: space-between;
+
+        width: 100%;
+
+        margin-top: 5px;
+    }
+
+    /* Total */
+    .total-carrinho {
+        text-align: right;
+    }
+
+    /* Botão continuar */
+    .continuar-comprando {
+        font-size: 14px;
+        padding: 11px;
+    }
+
+    /* Botão finalizar */
+    .finalizar {
+        font-size: 14px;
+        padding: 13px 10px;
+    }
+
+    /* X do carrinho */
+    .fechar-carrinho {
+        position: absolute;
+
+        top: 12px;
+        right: 12px;
+
+        width: 38px;
+        height: 38px;
+
+        border: none;
+        border-radius: 50%;
+
+        background-color: #6a0dad;
+        color: white;
+
+        font-size: 18px;
+        font-weight: bold;
+
+        cursor: pointer;
+
+        z-index: 9999;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fechar-carrinho:hover {
+        background-color: #52098a;
+        transform: scale(1.1);
+    }
+
+    /* Campos do pedido */
+    .dados-pedido input,
+    .dados-pedido select,
+    .dados-pedido textarea {
+        font-size: 14px;
+        padding: 11px;
+    }
+}
+
+/* =====================================
+   CARRINHO FLUTUANTE
+===================================== */
+
+.carrinho {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 55px;
+    height: 55px;
+
+    padding: 0;
+    margin: 0;
+
+    background-color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.20);
+
+    box-sizing: border-box;
+
+    transition: transform 0.2s ease;
+}
+
+.carrinho:hover {
+    transform: scale(1.08);
+    
+}
+
+/* Ícone */
+.icone-carrinho {
+    font-size: 29px;
+    line-height: 1;
+}
+
+/* Número */
+.quantidade-carrinho {
+    position: absolute;
+
+    top: -3px;
+    right: -3px;
+
+    width: 22px;
+    height: 22px;
+
+    padding: 0;
+
+    background-color: red;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    line-height: 1;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+
+    .carrinho {
+        width: 50px;
+        height: 50px;
+
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .icone-carrinho {
+        font-size: 26px;
+    }
+
+    .quantidade-carrinho {
+        width: 20px;
+        height: 20px;
+
+        font-size: 10px;
+    }
+}
+/* =====================================
+   NOTIFICAÇÕES
+===================================== */
+
+.notificacao {
+    position: fixed;
+
+    top: 25px;
+    right: 25px;
+
+    z-index: 9999;
+
+    min-width: 280px;
+    max-width: 350px;
+
+    padding: 15px 20px;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
+
+    font-size: 15px;
+    font-weight: bold;
+
+    animation: aparecerNotificacao 0.3s ease;
+}
+
+/* Notificação de sucesso */
+.notificacao.sucesso {
+    border-left: 5px solid #6a0dad;
+    color: #6a0dad;
+}
+
+/* Notificação de erro */
+.notificacao.erro {
+    border-left: 5px solid #d9534f;
+    color: #d9534f;
+}
+
+/* Entrada */
+@keyframes aparecerNotificacao {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Saída */
+.notificacao.saindo {
+
+    opacity: 0;
+
+    transform: translateX(30px);
+
+    transition: 0.3s ease;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+
+    .notificacao {
+
+        top: 15px;
+        left: 15px;
+        right: 15px;
+
+        min-width: auto;
+        max-width: none;
+
+        text-align: center;
+    }
+}
+/* =====================================
+   RESPONSIVIDADE - CABEÇALHO
+===================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 15px 20px;
+    }
+
+    header img {
+        width: 80px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+}
+/* =====================================
+   RESPONSIVIDADE - PRODUTOS
+===================================== */
+
+@media (max-width: 768px) {
+
+    .produtos {
+        padding: 40px 20px;
+    }
+
+    .produtos h2 {
+        font-size: 28px;
+    }
+
+    .lista-produtos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .produto {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .imagem-produto {
+        height: 180px;
+    }
+
+    .produto h3 {
+        font-size: 16px;
+    }
+
+    .produto p {
+        font-size: 15px;
+    }
+
+    .produto button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+/* =====================================
+   RESPONSIVIDADE - BANNER
+===================================== */
+
+@media (max-width: 768px) {
+
+    .banner {
+        padding: 70px 20px;
+    }
+
+    .banner h2 {
+        font-size: 30px;
+    }
+
+    .banner p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    .banner button {
+        width: 100%;
+        max-width: 250px;
+    }
+}

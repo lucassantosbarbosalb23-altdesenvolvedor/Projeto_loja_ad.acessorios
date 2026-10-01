@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produtos | AD.Acessórios</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="Produto.css">
+</head>
+ 
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+
+        <img src="img/logo_AD.png" alt="Logo AD.Acessórios">
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="Produtos.html">Produtos</a>
+            <a href="Sobre.html">Sobre nós</a>
+            <a
+    href="https://wa.me/5585981974741?text=Ol%C3%A1%21%20Tudo%20bem%3F%20%F0%9F%98%8A%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20produtos%20da%20AD.Acess%C3%B3rios."
+    target="_blank"
+    rel="noopener noreferrer">
+    Contato
+</a>
+        </nav>
+
+       <div class="carrinho" onclick="abrirCarrinho()">
+    <span class="icone-carrinho">🛒</span>
+    <span id="quantidade" class="quantidade-carrinho">0</span>
+</div>
+
+</div>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <section class="produtos">
+
+            <h2>Nossos produtos</h2>
+        <div class="busca-produtos">
+    <input
+        type="text"
+        id="campoBusca"
+        placeholder="🔎 Buscar produto..."
+        oninput="buscarProdutos()"
+    >
+</div>
+
+            <!-- CATEGORIAS -->
+            <div class="categorias">
+
+    <button
+        class="categoria-btn ativo"
+        onclick="filtrarProdutos('Todos', this)">
+        ✨ Todos
+    </button>
+
+    <button
+        class="categoria-btn"
+        onclick="filtrarProdutos('Brincos', this)">
+        ✨ Brincos
+    </button>
+
+    <button
+        class="categoria-btn"
+        onclick="filtrarProdutos('Anéis', this)">
+        💍 Anéis
+    </button>
+
+    <button
+        class="categoria-btn"
+        onclick="filtrarProdutos('Colares', this)">
+        📿 Colares
+    </button>
+
+    <button
+        class="categoria-btn"
+        onclick="filtrarProdutos('Biquini', this)">
+        👙 Biquini
+    </button>
+
+    <button
+        class="categoria-btn"
+        onclick="filtrarProdutos('Acessórios', this)">
+        🎀 Acessórios
+    </button>
+
+    <button
+        class="categoria-btn"
+        onclick="filtrarProdutos('Infantil', this)">
+        🧸 Infantil
+    </button>
+
+</div>
+
+
+            <!-- LISTA DE PRODUTOS -->
+           <div class="lista-produtos" id="lista-produtos">
+
+    <!-- Os produtos serão criados pelo JavaScript -->
+
+</div>
+
+            
+
+        </section>
+
+    </main>
+
+
+    <!-- CARRINHO -->
+    <div id="carrinhoModal"
+     class="carrinho-modal"
+     onclick="fecharCarrinhoAoClicarFora(event)">
+
+        <div class="carrinho-conteudo">
+
+            <button
+                class="fechar-carrinho"
+                onclick="fecharCarrinho()">
+
+                ✖
+
+            </button>
+
+            <h2>🛒 Meu Carrinho</h2>
+
+            <div id="lista-carrinho">
+                <!-- Produtos adicionados aparecem aqui -->
+            </div>
+
+            <div class="total-carrinho">
+
+                <h3>
+                    Total:
+                    R$ <span id="total-carrinho">0,00</span>
+                </h3>
+
+            </div>
+
+
+            <!-- DADOS DO PEDIDO -->
+            <div class="dados-pedido">
+
+                <h3>📋 Dados do pedido</h3>
+
+                <input
+                    type="text"
+                    id="nomeCliente"
+                    placeholder="Seu nome">
+
+                <select id="formaPagamento">
+
+                    <option value="">
+                        Forma de pagamento
+                    </option>
+
+                    <option value="Pix">
+                        Pix
+                    </option>
+
+                    <option value="Dinheiro">
+                        Dinheiro
+                    </option>
+
+                    <option value="Cartão">
+                        Cartão
+                    </option>
+                    
+                </select>
+                <select id="FormadeRecebimento">
+
+                    <option value="">
+                        Forma de Recebimento
+                    </option>
+
+                    <option value="Retirada">
+                        Retirada
+                    </option>
+
+                    <option value="Entrega">
+                        Entrega
+                    </option>
+                    </select>
+                
+                
+              <textarea
+    id="observacaoPedido"
+    name="observacaoPedido"
+    rows="4"
+    placeholder="Observações..."></textarea>
+                    
+            </div>
+             
+            <button
+              class="continuar-comprando"
+              onclick="fecharCarrinho()">
+
+    ← Continuar comprando
+
+            </button>
+
+            <button
+                class="finalizar"
+                onclick="finalizarPedido()">
+
+                Finalizar pedido pelo WhatsApp
+
+            </button>
+
+        </div>
+
+    </div>
+<!-- ===============================
+     MODAL DE DETALHES DO PRODUTO
+================================ -->
+
+<div id="produtoModal" class="produto-modal">
+
+    <div class="produto-detalhes">
+
+        <button
+            class="fechar-produto"
+            onclick="fecharProduto()">
+            ✖
+        </button>
+
+        <div class="produto-detalhes-imagem">
+            <img
+                id="produtoImagem"
+                src=""
+                alt="Produto">
+        </div>
+
+        <div class="produto-detalhes-info">
+
+            <h2 id="produtoNome">
+                Nome do produto
+            </h2>
+
+            <p class="produto-detalhes-categoria">
+                Categoria:
+                <span id="produtoCategoria"></span>
+            </p>
+
+            <p
+                id="produtoPreco"
+                class="produto-detalhes-preco">
+                R$ 0,00
+            </p>
+
+            <p
+                id="produtoDescricao"
+                class="produto-detalhes-descricao">
+                Descrição do produto
+            </p>
+            
+            <button
+                id="botaoComprarDetalhes"
+                class="botao-comprar-detalhes">
+                🛒 Adicionar ao carrinho
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <footer>
+
+        <p>
+            © 2026 AD.Acessórios - Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

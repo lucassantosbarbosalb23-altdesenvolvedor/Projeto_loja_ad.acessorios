@@ -1,0 +1,814 @@
+/* =====================================
+   PAINEL ADMINISTRATIVO
+===================================== */
+
+.painel-admin {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    min-height: 600px;
+}
+
+
+/* =====================================
+   CABEÇALHO DO PAINEL
+===================================== */
+
+.admin-cabecalho {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.admin-cabecalho h1 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.admin-cabecalho p {
+    color: #666;
+    font-size: 17px;
+}
+
+
+/* =====================================
+   CARDS DE RESUMO
+===================================== */
+
+.resumo-admin {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card-resumo {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card-resumo > span {
+    font-size: 35px;
+}
+
+.card-resumo h3 {
+    margin: 0 0 8px;
+    color: #555;
+}
+
+.card-resumo p {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: #6a0dad;
+}
+
+
+/* =====================================
+   ÁREA DE GERENCIAMENTO
+===================================== */
+
+.acoes-admin {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.acoes-admin h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.botoes-admin {
+    display: flex;
+    gap: 15px;
+}
+
+.botoes-admin button {
+    padding: 13px 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #6a0dad;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.botoes-admin button:hover {
+    background-color: #52098a;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   PRODUTOS CADASTRADOS
+===================================== */
+
+.admin-produtos {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.titulo-lista h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.lista-produtos-admin {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 800px) {
+
+    .resumo-admin {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-produtos-admin {
+        grid-template-columns: 1fr;
+    }
+
+    .botoes-admin {
+        flex-direction: column;
+    }
+}
+/* =====================================
+   FORMULÁRIO DE CADASTRO
+===================================== */
+
+.formulario-admin {
+    display: none;
+
+    background-color: white;
+    padding: 30px;
+
+    border-radius: 15px;
+
+    margin-bottom: 40px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.titulo-formulario {
+    margin-bottom: 25px;
+}
+
+.titulo-formulario h2 {
+    margin: 0 0 8px;
+    color: #333;
+}
+
+.titulo-formulario p {
+    margin: 0;
+    color: #666;
+}
+
+
+/* Campos */
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.campo-formulario label {
+    margin-bottom: 8px;
+
+    font-weight: bold;
+    color: #444;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+
+    outline: none;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    border-color: #6a0dad;
+    box-shadow: 0 0 0 2px rgba(106, 13, 173, 0.1);
+}
+
+.campo-formulario textarea {
+    resize: vertical;
+}
+
+
+/* =====================================
+   BOTÕES DO FORMULÁRIO
+===================================== */
+
+.botoes-formulario {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.botao-salvar,
+.botao-cancelar {
+    padding: 13px 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.botao-salvar {
+    background-color: #6a0dad;
+    color: white;
+}
+
+.botao-salvar:hover {
+    background-color: #52098a;
+    transform: translateY(-2px);
+}
+
+.botao-cancelar {
+    background-color: #eee;
+    color: #444;
+}
+
+.botao-cancelar:hover {
+    background-color: #ddd;
+}
+
+/* =====================================
+   PRODUTOS DO ADMIN
+===================================== */
+
+.lista-produtos-admin {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.produto-admin {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.produto-admin:hover {
+    transform: translateY(-4px);
+}
+
+.produto-admin img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+}
+
+.produto-admin-info {
+    padding: 18px;
+}
+
+.produto-admin-info h3 {
+    margin: 0 0 8px;
+    color: #333;
+}
+
+.produto-admin-info p {
+    margin: 0 0 10px;
+    color: #777;
+}
+
+.produto-admin-info strong {
+    display: block;
+
+    color: #6a0dad;
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.produto-admin-info span {
+    color: #555;
+}
+
+.nenhum-produto {
+    color: #777;
+    text-align: center;
+    padding: 30px;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 900px) {
+
+    .lista-produtos-admin {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .lista-produtos-admin {
+        grid-template-columns: 1fr;
+    }
+
+    .botoes-formulario {
+        flex-direction: column;
+    }
+}
+
+.acoes-produto {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-editar,
+.btn-excluir {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-editar {
+    background-color: #6a0dad;
+    color: white;
+}
+
+.btn-excluir {
+    background-color: #d9534f;
+    color: white;
+}
+
+.btn-editar:hover,
+.btn-excluir:hover {
+    opacity: 0.85;
+}
+
+.controle-estoque {
+    margin-top: 12px;
+}
+
+.botoes-estoque {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn-estoque {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6a0dad;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-estoque:hover {
+    opacity: 0.85;
+}
+
+.botoes-estoque strong {
+    min-width: 25px;
+    text-align: center;
+}
+
+.estoque-normal {
+    color: #198754;
+    font-weight: bold;
+}
+
+.estoque-baixo {
+    color: #d97706;
+    font-weight: bold;
+}
+
+.estoque-esgotado {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.estoque-baixo-card {
+    border-left: 5px solid #d97706;
+}
+
+.estoque-esgotado-card {
+    border-left: 5px solid #d9534f;
+}
+
+.estoque-normal-card {
+    border-left: 5px solid #198754;
+}
+/* =====================================
+   STATUS DOS CARDS DE ESTOQUE
+===================================== */
+
+.card-resumo.estoque-baixo-card {
+    display: block;
+    border-left: 5px solid #d97706;
+}
+.card-resumo.estoque-esgotado-card {
+    display: block;
+    border-left: 5px solid #d9534f;
+}
+
+.titulo-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.titulo-status h3 {
+    margin: 0;
+    color: #555;
+}
+
+.quantidade-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantidade-status strong {
+    color: #333;
+    font-size: 22px;
+}
+
+.quantidade-status span {
+    color: #6a0dad;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.lista-status {
+    margin-top: 20px;
+}
+
+.item-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-status:last-child {
+    border-bottom: none;
+}
+
+.item-status span {
+    color: #444;
+    font-weight: bold;
+}
+
+.item-status strong {
+    color: #d97706;
+}
+
+.estoque-esgotado-card .item-status strong {
+    color: #d9534f;
+}
+
+.sem-status {
+    color: #198754;
+    font-weight: bold;
+    margin: 15px 0 0;
+}
+.card-resumo.estoque-normal-card {
+    display: block;
+    border-left: 5px solid #198754;
+}
+.estoque-normal-card .item-status strong {
+    color: #198754;
+}
+/* =====================================
+   MELHORIA DO CABEÇALHO ADMIN
+===================================== */
+
+.admin-cabecalho {
+    background: linear-gradient(135deg, #6a0dad, #8e44ad);
+    padding: 35px 25px;
+    border-radius: 18px;
+    margin-bottom: 35px;
+    box-shadow: 0 6px 18px rgba(106, 13, 173, 0.41);
+}
+
+.admin-cabecalho h1 {
+    color: white;
+    font-size: 34px;
+    margin: 0 0 10px;
+}
+
+.admin-cabecalho p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 17px;
+    margin: 0;
+}
+/* =====================================
+   MELHORIA DOS CARDS DO DASHBOARD
+===================================== */
+
+.card-resumo {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #f0e6f7;
+}
+
+.card-resumo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(106, 13, 173, 0.362);
+}
+
+
+/* ÍCONES DOS CARDS */
+
+.card-resumo > span {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f3e8fa;
+    border-radius: 14px;
+
+    font-size: 30px;
+}
+
+
+/* TÍTULOS */
+
+.card-resumo h3 {
+    font-size: 16px;
+}
+
+
+/* NÚMEROS */
+
+.card-resumo p {
+    font-size: 27px;
+}
+
+
+/* =====================================
+   CARDS DE STATUS
+===================================== */
+
+.estoque-baixo-card,
+.estoque-esgotado-card,
+.estoque-normal-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.estoque-baixo-card:hover,
+.estoque-esgotado-card:hover,
+.estoque-normal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(106, 13, 173, 0.362);
+}
+
+
+/* TÍTULO DOS STATUS */
+
+.titulo-status h3 {
+    font-size: 17px;
+}
+
+
+/* QUANTIDADE */
+
+.quantidade-status strong {
+    font-size: 26px;
+}
+
+.quantidade-status span {
+    font-size: 14px;
+    color: #777;
+    font-weight: normal;
+}
+/* =====================================
+   MELHORIA DA ÁREA DE GERENCIAMENTO
+===================================== */
+
+.acoes-admin {
+    border: 1px solid #f0e6f7;
+    box-shadow: 0 6px 18px rgba(106, 13, 173, 0.10);
+}
+
+.acoes-admin h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.botoes-admin {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.botoes-admin button {
+    min-height: 55px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+
+    box-shadow: 0 4px 10px rgba(106, 13, 173, 0.15);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        background-color 0.3s;
+}
+
+.botoes-admin button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 16px rgba(106, 13, 173, 0.22);
+}
+
+
+/* =====================================
+   BOTÃO CADASTRAR
+===================================== */
+
+.botoes-admin button:first-child {
+    background: linear-gradient(135deg, #6a0dad, #8e44ad);
+}
+
+
+/* =====================================
+   BOTÃO VER ESTOQUE
+===================================== */
+
+.botoes-admin button:last-child {
+    background-color: #f3e8fa;
+    color: #6a0dad;
+}
+
+.botoes-admin button:last-child:hover {
+    background-color: #f4e2fd;
+}
+/* =====================================
+   MELHORIA DOS CARDS DE PRODUTO
+===================================== */
+
+.produto-admin {
+    border: 1px solid #eee;
+    border-radius: 16px;
+    background-color: #fff;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.produto-admin:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(106, 13, 173, 0.14);
+}
+
+
+/* IMAGEM */
+
+.produto-admin img {
+    height: 220px;
+    display: block;
+}
+
+
+/* INFORMAÇÕES */
+
+.produto-admin-info {
+    padding: 20px;
+}
+
+.produto-admin-info h3 {
+    font-size: 19px;
+    margin-bottom: 6px;
+}
+
+.produto-admin-info p {
+    font-size: 14px;
+    color: #777;
+}
+
+
+/* PREÇO */
+
+.produto-admin-info strong {
+    font-size: 21px;
+    color: #6a0dad;
+}
+
+
+/* =====================================
+   CONTROLE DE ESTOQUE
+===================================== */
+
+.controle-estoque {
+    margin-top: 15px;
+    padding: 12px;
+
+    background-color: #faf7fc;
+    border-radius: 10px;
+}
+
+.botoes-estoque {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-estoque {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 9px;
+
+    font-size: 21px;
+
+    transition: 0.2s;
+}
+
+.btn-estoque:hover {
+    transform: scale(1.08);
+}
+
+
+/* =====================================
+   BOTÕES EDITAR / EXCLUIR
+===================================== */
+
+.acoes-produto {
+    margin-top: 18px;
+}
+
+.btn-editar,
+.btn-excluir {
+    min-height: 40px;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
+}
+
+.btn-editar:hover,
+.btn-excluir:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
