@@ -5,7 +5,7 @@
 // ===============================
 // PRODUTOS DA LOJA
 // ===============================
-console.log("Teste: 👋 💜 👤 🛍️ 💰 💳 📦 📝 😊");
+
 const produtos = [
 
     {
@@ -722,8 +722,12 @@ function buscarProdutos() {
             categoriaSelecionada = "Colares";
        } else if (categoriaAtual.includes("Biquini")) {
     categoriaSelecionada = "Biquini";
+       }else if (categoriaAtual.includes("Lingerie")) {
+    categoriaSelecionada = "Lingerie";
         } else if (categoriaAtual.includes("Acessórios")) {
             categoriaSelecionada = "Acessórios";
+        }else if (categoriaAtual.includes("Infantil")) {
+    categoriaSelecionada = "Infantil";
         }
 
         const correspondeCategoria =
